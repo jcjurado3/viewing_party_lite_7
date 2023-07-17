@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
- 
-    # movie_id = @user.parties.first.movie_id
-    # @movie = SearchFacade.new(params[movie_id]).movies.first
-    # @party = @user.parties.first
   end
 
   def new
