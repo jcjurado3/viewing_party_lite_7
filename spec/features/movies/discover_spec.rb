@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Users Discover Page', type: :feature do
   before(:each) do
-    @user1 = User.create!(name: 'Sarah', email: 'Sarah@gmail.com')
-    @user2 = User.create!(name: 'Jimmy', email: 'Jimmy@gmail.com')
+    @user1 = User.create!(name: 'Sarah', email: 'Sarah@gmail.com', password: 'test', password_confirmation: 'test')
+    @user2 = User.create!(name: 'Jimmy', email: 'Jimmy@gmail.com', password: 'test', password_confirmation: 'test')
   end
   describe 'As a user, when I visit the User Dashboard and I click on "Discover Movies"' do
     it 'redirects me to a discover movies page' do

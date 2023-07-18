@@ -12,11 +12,9 @@
 
   <body>
     <nav> <%= link_to "Home", root_path %> </nav>
-    <% flash.each do |type, msg| %>
-    <div>
-      <%= msg %>
-    </div>
-  <% end %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

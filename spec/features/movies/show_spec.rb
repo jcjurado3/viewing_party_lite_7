@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie Details Page', type: :feature do
   before(:each) do
-    @user1 = User.create!(name: 'Sarah', email: 'sarah@gmail.com')
+    @user1 = User.create!(name: 'Sarah', email: 'sarah@gmail.com', password: 'test', password_confirmation: 'test')
     movies = SearchFacade.new.movies
     @movie = movies.first
     @reviews = MovieFacade.new(@movie.id).get_reviews
