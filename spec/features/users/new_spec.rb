@@ -40,6 +40,8 @@ RSpec.describe "/register", type: :feature do
 
         expect(current_path).to eq(user_path(created_user))
       end
+
+      
     end
 
     context "sad path" do

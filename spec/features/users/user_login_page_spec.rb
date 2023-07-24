@@ -12,7 +12,7 @@ RSpec.describe "User Log In Page" do
         expect(page).to have_button("Log In")
         click_button "Log In"
 
-        expect(current_path).to eq(login_path)
+        expect(current_path).to eq(new_session_path)
       end
       it "login form" do
         visit root_path
@@ -36,7 +36,7 @@ RSpec.describe "User Log In Page" do
         click_on "Submit"
 
         expect(page).to have_content("Sorry, your credentials are bad.")
-        expect(current_path).to eq(login_path)
+        expect(current_path).to eq(sessions_path)
       end
     end
   end

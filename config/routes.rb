@@ -6,8 +6,10 @@ Rails.application.routes.draw do
 
   root 'application#welcome'
 
-  get "/login", to: "users#login_form"
-  post "/login", to: "users#login_user"
+  # get "/login", to: "sessions#new"
+  # post "/login", to: "sessions#create"
+  # post "/login", to: "sessions#destroy"
+  resources :sessions, only: [:new, :create, :destroy]
 
   get '/users/:id', to: 'users#show', as: 'user'
   get '/users/:id/discover', to: 'movies#discover', as: 'discover'

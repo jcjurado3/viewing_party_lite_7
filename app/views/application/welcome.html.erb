@@ -1,14 +1,18 @@
 <h1>Viewing Party</h1>
+<% if current_user %>
+  <%= button_to 'Log Out', session_path(current_user), method: :delete %>
+<% else %>  
+  <%= button_to 'Create New User', '/register', method: :get %>
+  <%= button_to 'Log In', new_session_path, method: :get %>
+<% end %>  
 
-<%= button_to 'Create New User', '/register', method: :get %>
-<%= button_to 'Log In', login_path, method: :get %>
-
-
-<h2>Existing Users</h2>
-<section  id="existing-users"> 
-<% @users.each do |user| %>
-  <ul> 
-    <li id="user-<%= user.id %>"> <%= link_to user.name, "/users/#{user.id}" %> </li>
-  </ul>  
+<% if current_user %>
+  <h2>Existing Users</h2>
+  <section  id="existing-users"> 
+  <% @users.each do |user| %>
+    <ul> 
+      <li id="user_<%= user.id %>"><%= user.email %> </li>
+    </ul>  
+  <% end %>
+  </section>
 <% end %>
-</section>
